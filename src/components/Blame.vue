@@ -1,5 +1,5 @@
 <template>
-  <Modal :close="close" name="blame" :visible="visible()">
+  <Modal :close="close" name="blame" :visible="visible()" position="right">
 
     <div slot="title">
       Syytös
@@ -15,14 +15,17 @@
     </div>
 
     <div class="toolbar row">
-      <span class="flex"></span><Button v-on:click="blame">Lisää</Button>
+      <Button class="flex" v-on:click="blame">Lisää</Button>
     </div>
+
+    <hr>
 
     <data-table :options="tableOptions" :data="blames"></data-table>
 
-
-    <div slot="footer">
+    <div class="toolbar row">
+      <span class="flex"></span>
       <Button v-on:click="remove">Poista koko paska</Button>
+      <span class="flex"></span>
     </div>
 
   </Modal>

@@ -96,6 +96,10 @@ export default {
     flex: none;
   }
 
+  [slot="footer"]:empty{
+    display: none;
+  }
+
   .modal-wrapper [slot="footer"] button{
     margin: 0 8px;
   }

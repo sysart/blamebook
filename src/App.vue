@@ -143,7 +143,6 @@ h1{
   font-weight: 300;
   text-align: center;
   font-size: 70pt;
-  color: #42b983;
   margin: 32px 0 0 0;
 }
 
@@ -198,5 +197,12 @@ h1{
 
 .text-center{
   text-align: center;
+}
+
+hr{
+  margin: 32px -16px;
+  border: none;
+  border-top: 1px solid;
+  border-color: rgba(66, 185, 131, 0.41);
 }
 </style>

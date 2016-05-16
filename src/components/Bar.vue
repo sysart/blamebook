@@ -74,10 +74,10 @@ export default {
   bottom: 0;
   text-align: center;
   width: 100%;
-  color: #42b983;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.5em;
 }
 
 .bar-value-label{
