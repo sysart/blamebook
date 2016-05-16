@@ -2,14 +2,20 @@
   <div class="add-user">
     <input type="text" v-model="name">
     <div class="spacer"></div>
-    <button v-on:click="add(name)">+</button>
+    <Button opaque round v-on:click="add(name)">+</Button>
   </div>
 </template>
 <script>
 
 import { api } from '../api';
+import Button from './Button';
 
 export default {
+
+  components: {
+    Button,
+  },
+
   data() {
     return {
       name: '',
@@ -32,24 +38,12 @@ export default {
 }
 
 input{
-  background-color: transparent;
-  outline: none;
-  border: none;
-  color: #42b983;
-  border-bottom: 2px solid #42b983;
-  padding: 8px;
 
-  flex: 1;
 }
 
 button{
   width: 64px;
   height: 64px;
-  outline: none;
-  border: none;
-  background-color: #42b983;
-  color: white;
-  border-radius: 50%;
 }
 
 .spacer{

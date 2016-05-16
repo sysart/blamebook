@@ -17,7 +17,10 @@ export const api = {
   },
 
   blame(user) {
-    this._users.child(user).child('blame').transaction((currentValue) => (currentValue || 0) + 1);
+    this._users
+      .child(user)
+      .child('blame')
+      .transaction((currentValue) => (currentValue || 0) + 1);
   },
 
   remove(user) {
