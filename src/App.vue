@@ -122,7 +122,7 @@ table {
 
 html {
   font-size: 10pt;
-  font-family: helvetica neue;
+  font-family: 'Open Sans', sans-serif;
   height: 100%;
 }
 
@@ -130,7 +130,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  min-height: 100%;
   color: #42b983;
 }
 
@@ -140,10 +140,11 @@ body {
 
 
 h1{
-  font-weight: 100;
+  font-weight: 300;
   text-align: center;
   font-size: 70pt;
   color: #42b983;
+  margin: 32px 0 0 0;
 }
 
 .container{
