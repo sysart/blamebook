@@ -63,7 +63,7 @@ export default {
     display: flex;
     flex-direction: column;
     box-shadow: 0px 0px 80px -20px rgba(0,0,0,0.7);
-    overflow-y: scroll;
+    color: #42b983;
   }
 
   .modal-wrapper .modal-content{
@@ -73,6 +73,7 @@ export default {
     color: white;
     position: relative;
     padding: 16px;
+    overflow-y: scroll;
   }
 
   .modal-wrapper [slot="title"], .modal-wrapper [slot="footer"]{
@@ -80,8 +81,7 @@ export default {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: white;
-    padding: 8px 0;
+    padding: 16px 0;
     flex: none;
   }
 

@@ -1,5 +1,5 @@
 <template>
-  <Modal :close="close" position="right" name="blame" :visible="visible()">
+  <Modal :close="close" name="blame" :visible="visible()">
 
     <div slot="title">
       Syytös

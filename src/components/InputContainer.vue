@@ -83,9 +83,47 @@ export default {
     color:    rgba(255,255,255,0.5);
   }
 
-
-
   .input-container[light] span{
     color: white;
   }
+
+  .input-container input[type="checkbox"]{
+    position: relative;
+    width: 32px;
+    height: 32px;
+  }
+
+  .input-container input[type="checkbox"] + span{
+    line-height: 42px;
+    vertical-align: baseline;
+    display: inline-block;
+  }
+
+  .input-container input[type="checkbox"]:before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    border-color: rgba(66, 185, 131, 1);
+    border: 2px solid;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+  }
+
+  .input-container input[type="checkbox"]:checked:after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-color: rgba(66, 185, 131, 1);
+    display: block;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 6px;
+    left: 6px;
+  }
+
 </style>

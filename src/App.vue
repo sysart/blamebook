@@ -142,7 +142,6 @@ body {
 
 h1{
   font-weight: 100;
-  text-transform: uppercase;
   text-align: center;
   font-size: 70pt;
   color: #42b983;
