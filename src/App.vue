@@ -1,29 +1,32 @@
 <template>
-<div class="view">
+  <div class="view">
 
-  <h1>blamebook</h1>
+    <h1>blamebook</h1>
 
-
-  <Background class="users-wrapper container">
-
-    <div class="user-wrapper" v-for="(userId, user) in api.users">
-
-      <Bar v-on:click="blame(userId)"
-        :value="user.blame"
-        :label="user.name"
-        :max="maxValue">
-      </Bar>
-
+    <div class="text-center container">
+      <p>Syytöstenkirjausohjelma. paras ikinä.</p>
     </div>
 
-  </Background>
+    <Background class="users-wrapper container">
 
-  <Background class="container">
-    <Adduser></Adduser>
-  </Background>
-</div>
+      <div class="user-wrapper" v-for="(userId, user) in api.users">
 
-<Blame></Blame>
+        <Bar v-on:click="blame(userId)"
+          :value="user.blame"
+          :label="user.name"
+          :max="maxValue">
+        </Bar>
+
+      </div>
+
+    </Background>
+
+    <Background class="container">
+      <Adduser></Adduser>
+    </Background>
+  </div>
+
+  <Blame></Blame>
 </template>
 
 <script>
@@ -43,20 +46,15 @@ export default {
     Blame,
   },
 
-  default: {
-    maxValue: 100,
-  },
-
   data() {
     return {
       api,
-      testValue: 10,
+      maxValue: 100,
     };
   },
 
   methods: {
     blame(userId) {
-      console.log(userId);
       this.$broadcast('blame', userId);
     },
   },
@@ -133,6 +131,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
+  color: #42b983;
 }
 
 *{
@@ -149,7 +148,7 @@ h1{
 
 .container{
   width: 700px;
-  max-width: 90%;
+  max-width: 100%;
   justify-content: center;
 }
 
@@ -168,19 +167,6 @@ h1{
 
 .user-wrapper, .user-wrapper button{
   transition: 0.2s;
-}
-
-.user-wrapper button{
-  opacity: 0;
-  margin: 8px 0;
-  display: block;
-  width: 80%;
-}
-
-.user-wrapper button:hover{
-  border-color: #b94254;
-  background-color: #b94254;
-  color: white;
 }
 
 .user-wrapper:hover{

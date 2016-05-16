@@ -7,6 +7,7 @@ export const api = {
   firebase,
 
   _users: firebase.child('users'),
+  _blames: firebase.child('blames'),
 
   users: [],
 
@@ -52,8 +53,7 @@ export const api = {
    * @return {[type]}      [description]
    */
   userBlames(user) {
-    return this.firebase
-      .child('blames')
+    return this._blames
       .child(user)
       .startAt()
       .limitToFirst(30);
@@ -65,7 +65,9 @@ export const api = {
    * @return {promise}
    */
   remove(user) {
-    return this._users.child(user).remove();
+    return this._users.child(user).remove().then(() => {
+      this._blames.child(user).remove();
+    });
   },
 
   save(data) {

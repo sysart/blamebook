@@ -5,16 +5,13 @@
 
       <slot name="title"></slot>
 
-
       <div class="modal-content-wrapper">
         <div class="modal-content">
           <slot></slot>
         </div>
       </div>
 
-      <slot name="footer">
-
-      </slot>
+      <slot name="footer"></slot>
     </div>
 
   </Overlay>

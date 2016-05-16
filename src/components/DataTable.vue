@@ -18,11 +18,11 @@
 export default {
   props: {
     options: {
-      type: [Object],
+      type: Object,
       default: {},
     },
     data: {
-      type: [Array],
+      type: Array,
       default: [],
     },
   },

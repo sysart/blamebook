@@ -5,21 +5,20 @@
       Syytös
     </div>
 
+    <div class="column">
+      <input-container class="flex" label="Syy">
+        <input type="text" v-model="reason" placeholder="{{defaultReason}}" @keyup.enter="blame()">
+      </input-container>
+      <input-container label="Retardi">
+        <input type="checkbox" v-model="retard">
+      </input-container>
+    </div>
 
-      <div class="column">
-        <input-container class="flex" label="Syy">
-          <input type="text" v-model="reason" placeholder="{{defaultReason}}" @keyup.enter="blame()">
-        </input-container>
-        <input-container label="Retardi">
-          <input type="checkbox" v-model="retard">
-        </input-container>
-      </div>
+    <div class="toolbar row">
+      <span class="flex"></span><Button v-on:click="blame">Lisää</Button>
+    </div>
 
-      <div class="toolbar row">
-        <span class="flex"></span><Button v-on:click="blame">Lisää</Button>
-      </div>
-
-      <data-table :options="tableOptions" :data="blames"></data-table>
+    <data-table :options="tableOptions" :data="blames"></data-table>
 
 
     <div slot="footer">
@@ -92,7 +91,6 @@ export default {
   events: {
     blame(userId) {
       this.userId = userId;
-      console.log(this);
 
       this.api.userBlames(this.userId).on('value', (snapshot) => {
         this.blames = [];
