@@ -5,7 +5,12 @@
 
       <slot name="title"></slot>
 
-      <slot></slot>
+
+      <div class="modal-content-wrapper">
+        <div class="modal-content">
+          <slot></slot>
+        </div>
+      </div>
 
       <slot name="footer">
 
@@ -64,16 +69,25 @@ export default {
     flex-direction: column;
     box-shadow: 0px 0px 80px -20px rgba(0,0,0,0.7);
     color: #42b983;
+    max-height: 100%;
+    max-width: 100%;
   }
 
-  .modal-wrapper .modal-content{
+  .modal-wrapper .modal-content-wrapper{
     display: flex;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     flex-direction: column;
     color: white;
     position: relative;
+
+    box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,0.1);
+  }
+
+  .modal-content{
     padding: 16px;
     overflow-y: scroll;
+    max-height: 100%;
+    width: 100%;
   }
 
   .modal-wrapper [slot="title"], .modal-wrapper [slot="footer"]{

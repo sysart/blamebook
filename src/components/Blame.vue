@@ -5,8 +5,8 @@
       Syytös
     </div>
 
-    <div class="modal-content">
-      <div class="row">
+
+      <div class="column">
         <input-container class="flex" label="Syy">
           <input type="text" v-model="reason" placeholder="{{defaultReason}}" @keyup.enter="blame()">
         </input-container>
@@ -14,13 +14,13 @@
           <input type="checkbox" v-model="retard">
         </input-container>
       </div>
-      <div class="toolbar">
-        <Button v-on:click="blame">Lisää</Button>
+
+      <div class="toolbar row">
+        <span class="flex"></span><Button v-on:click="blame">Lisää</Button>
       </div>
 
       <data-table :options="tableOptions" :data="blames"></data-table>
 
-    </div>
 
     <div slot="footer">
       <Button v-on:click="remove">Poista koko paska</Button>
@@ -92,6 +92,7 @@ export default {
   events: {
     blame(userId) {
       this.userId = userId;
+      console.log(this);
 
       this.api.userBlames(this.userId).on('value', (snapshot) => {
         this.blames = [];
@@ -114,10 +115,11 @@ export default {
         retard: this.retard,
       });
 
-      this.reason = '';
+      this.close();
     },
 
     close() {
+      this.reason = '';
       this.userId = null;
       this.blames = [];
     },

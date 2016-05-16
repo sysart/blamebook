@@ -91,12 +91,18 @@ export default {
     position: relative;
     width: 32px;
     height: 32px;
+    flex: none;
+    cursor: pointer;
+    
   }
 
   .input-container input[type="checkbox"] + span{
     line-height: 42px;
     vertical-align: baseline;
     display: inline-block;
+    left: auto;
+    right: auto;
+    padding-left: 8px;
   }
 
   .input-container input[type="checkbox"]:before {

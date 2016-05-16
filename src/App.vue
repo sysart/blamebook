@@ -200,6 +200,11 @@ h1{
   flex-direction: row;
 }
 
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
 .flex{
   flex: 1;
 }
