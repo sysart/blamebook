@@ -14,15 +14,12 @@
         :max="maxValue">
       </Bar>
 
-
-      <Button v-on:click="remove(userId)">x</Button>
-
     </div>
 
   </Background>
 
   <Background class="container">
-      <Adduser></Adduser>
+    <Adduser></Adduser>
   </Background>
 </div>
 
@@ -37,7 +34,6 @@ import Adduser from './components/Adduser';
 import Bar from './components/Bar';
 import Background from './components/Background';
 import Blame from './components/Blame';
-import Button from './components/Button';
 
 export default {
   components: {
@@ -45,7 +41,6 @@ export default {
     Bar,
     Background,
     Blame,
-    Button,
   },
 
   default: {
@@ -63,10 +58,6 @@ export default {
     blame(userId) {
       console.log(userId);
       this.$broadcast('blame', userId);
-    },
-
-    remove(userId) {
-      this.api.remove(userId);
     },
   },
 
@@ -151,6 +142,7 @@ body {
 
 h1{
   font-weight: 100;
+  text-transform: uppercase;
   text-align: center;
   font-size: 70pt;
   color: #42b983;
@@ -204,4 +196,16 @@ h1{
   height: 200px;
 }
 
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex{
+  flex: 1;
+}
+
+.text-center{
+  text-align: center;
+}
 </style>

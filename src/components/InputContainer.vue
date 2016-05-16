@@ -43,10 +43,47 @@ export default {
     flex: 1;
   }
 
+  .input-container input[type="checkbox"] + span{
+    display: block;
+    position: relative;
+  }
+
   .input-container[light] input{
     color: white;
     border-color: white;
   }
+
+  .input-container ::-webkit-input-placeholder {
+    color:    rgba(66, 185, 131,0.6);
+  }
+  .input-container :-moz-placeholder {
+    color:    rgba(66, 185, 131,0.6);
+    opacity:  1;
+  }
+  .input-container ::-moz-placeholder {
+    color:    rgba(66, 185, 131,0.6);
+    opacity:  1;
+  }
+  .input-container :-ms-input-placeholder {
+    color:    rgba(66, 185, 131,0.6);
+  }
+
+  .input-container[light] ::-webkit-input-placeholder {
+    color:    rgba(255,255,255,0.5);
+  }
+  .input-container[light] :-moz-placeholder {
+    color:    rgba(255,255,255,0.5);
+    opacity:  1;
+  }
+  .input-container[light] ::-moz-placeholder {
+    color:    rgba(255,255,255,0.5);
+    opacity:  1;
+  }
+  .input-container[light] :-ms-input-placeholder {
+    color:    rgba(255,255,255,0.5);
+  }
+
+
 
   .input-container[light] span{
     color: white;

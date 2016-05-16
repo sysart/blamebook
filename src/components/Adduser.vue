@@ -1,6 +1,8 @@
 <template>
   <div class="add-user">
-    <input type="text" v-model="name">
+    <input-container label="name">
+      <input type="text" v-model="name" @keyup.enter="add()">
+    </input-container>
     <div class="spacer"></div>
     <Button opaque round v-on:click="add(name)">+</Button>
   </div>
@@ -9,11 +11,13 @@
 
 import { api } from '../api';
 import Button from './Button';
+import InputContainer from './InputContainer';
 
 export default {
 
   components: {
     Button,
+    InputContainer,
   },
 
   data() {
@@ -24,8 +28,10 @@ export default {
 
   methods: {
     add() {
-      api.save(this.name);
-      this.name = '';
+      if (!!this.name) {
+        api.save(this.name);
+        this.name = '';
+      }
     },
   },
 };
@@ -37,8 +43,8 @@ export default {
   align-items: center;
 }
 
-input{
-
+.input-container{
+  flex: 1;
 }
 
 button{

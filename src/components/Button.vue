@@ -13,6 +13,12 @@ button {
   color: #42b983;
   border: 1px solid #42b983;
   cursor: pointer;
+  padding: 8px 16px;
+  transition: 0.2s;
+}
+
+button:hover{
+  background-color: rgba(255,255,255,0.1);
 }
 
 button[round] {

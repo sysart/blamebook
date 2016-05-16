@@ -16,19 +16,60 @@ export const api = {
     });
   },
 
-  blame(user) {
-    this._users
+
+  /**
+  * add blame to a user
+  * @param  {string} user userid
+  * @param  {object} data
+  * @return {promise}
+  */
+  blame(user, data) {
+    return this._users
       .child(user)
       .child('blame')
-      .transaction((currentValue) => (currentValue || 0) + 1);
+      .transaction((currentValue) => (currentValue || 0) + 1, () => {
+        const f = {};
+
+        Object.keys(data).forEach((key) => {
+          if (!!data[key]) {
+            f[key] = data[key];
+          }
+        });
+
+        f.time = Firebase.ServerValue.TIMESTAMP;
+
+        this.firebase
+          .child('blames')
+          .child(user)
+          .push()
+          .setWithPriority(f, 0 - Date.now());
+      });
   },
 
+  /**
+   * get user blames
+   * @param  {[type]} user [description]
+   * @return {[type]}      [description]
+   */
+  userBlames(user) {
+    return this.firebase
+      .child('blames')
+      .child(user)
+      .startAt()
+      .limitToFirst(30);
+  },
+
+  /**
+   * delete user data
+   * @param  {string} user
+   * @return {promise}
+   */
   remove(user) {
-    this._users.child(user).remove();
+    return this._users.child(user).remove();
   },
 
   save(data) {
-    this._users.push().set({ name: data });
+    return this._users.push().set({ name: data });
   },
 };
 
