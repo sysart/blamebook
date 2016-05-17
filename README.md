@@ -1,6 +1,8 @@
 # blamebook
 
-> sun syy
+Ultimaattinen syytöstenkirjausohjelmistotuote jolla voi kätevästi valvoa työntekijöiden tekemiä virheitä.
+
+[demo](http://sysart.github.io/blamebook)
 
 ## Build Setup
 
@@ -22,6 +24,9 @@ npm run e2e
 
 # run all tests
 npm test
+
+# deploy to gh-pages
+npm run deploy
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
